@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    p {
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    img,
+    a img {
+        border: 0;
+        height: auto;
+        outline: none;
+        text-decoration: none;
+    }
+
+    body,
+    #bodyTable,
+    #bodyCell {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .mcnPreviewText {
+        display: none !important;
+    }
+
+    #outlook a {
+        padding: 0;
+    }
+
+    img {
+        -ms-interpolation-mode: bicubic;
+    }
+
+    table {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+    }
+
+    .ReadMsgBody {
+        width: 100%;
+    }
+
+    .ExternalClass {
+        width: 100%;
+    }
+
+    p,
+    a,
+    li,
+    td,
+    blockquote {
+        mso-line-height-rule: exactly;
+    }
+
+    a[href^=tel],
+    a[href^=sms] {
+        color: inherit;
+        cursor: default;
+        text-decoration: none;
+    }
+
+    p,
+    a,
+    li,
+    td,
+    body,
+    table,
+    blockquote {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass td,
+    .ExternalClass div,
+    .ExternalClass span,
+    .ExternalClass font {
+        line-height: 100%;
+    }
+
+    a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+    }
+
+    .templateContainer {
+        max-width: 600px !important;
+    }
+
+    a.mcnButton {
+        display: block;
+    }
+
+    .mcnImage,
+    .mcnRetinaImage {
+        vertical-align: bottom;
+    }
+
+    .mcnTextContent {
+        word-break: break-word;
+    }
+
+    .mcnTextContent img {
+        height: auto !important;
+    }
+
+    .mcnDividerBlock {
+        table-layout: fixed !important;
+    }
+
+    h1 {
+        color: #000000;
+        font-family: Helvetica;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: normal;
+        text-align: center;
+    }
+
+    h2 {
+        color: #222222;
+        font-family: Helvetica;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: normal;
+        text-align: left;
+    }
+
+    h3 {
+        color: #444444;
+        font-family: Helvetica;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 150%;
+        letter-spacing: normal;
+        text-align: left;
+    }
+
+    h4 {
+        color: #949494;
+        font-family: Georgia;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: normal;
+        line-height: 125%;
+        letter-spacing: normal;
+        text-align: center;
+    }
+
+    #templateHeader {
+        background-color: #000000;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-top: 0;
+        border-bottom: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .headerContainer {
+        background-color: transparent;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-top: 0;
+        border-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .headerContainer .mcnTextContent,
+    .headerContainer .mcnTextContent p {
+        color: #757575;
+        font-family: Helvetica;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: left;
+    }
+
+    .headerContainer .mcnTextContent a,
+    .headerContainer .mcnTextContent p a {
+        color: #007C89;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+
+    #templateBody {
+        background-color: #000000;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-top: 0;
+        border-bottom: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .bodyContainer {
+        background-color: transparent;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-top: 0;
+        border-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .bodyContainer .mcnTextContent,
+    .bodyContainer .mcnTextContent p {
+        color: #757575;
+        font-family: Helvetica;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: left;
+    }
+
+    .bodyContainer .mcnTextContent a,
+    .bodyContainer .mcnTextContent p a {
+        color: #007C89;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+
+    #templateFooter {
+        background-color: #333333;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-top: 0;
+        border-bottom: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .footerContainer {
+        background-color: transparent;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-top: 0;
+        border-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .footerContainer .mcnTextContent,
+    .footerContainer .mcnTextContent p {
+        color: #FFFFFF;
+        font-family: Helvetica;
+        font-size: 12px;
+        line-height: 150%;
+        text-align: center;
+    }
+
+    .footerContainer .mcnTextContent a,
+    .footerContainer .mcnTextContent p a {
+        color: #FFFFFF;
+        font-weight: normal;
+        text-decoration: underline;
+    }
+
+    @media only screen and (min-width:768px) {
+        .templateContainer {
+            width: 600px !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        body,
+        table,
+        td,
+        p,
+        a,
+        li,
+        blockquote {
+            -webkit-text-size-adjust: none !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        body {
+            width: 100% !important;
+            min-width: 100% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        .mcnRetinaImage {
+            max-width: 100% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        .mcnImage {
+            width: 100% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .mcnCartContainer,
+        .mcnCaptionTopContent,
+        .mcnRecContentContainer,
+        .mcnCaptionBottomContent,
+        .mcnTextContentContainer,
+        .mcnBoxedTextContentContainer,
+        .mcnImageGroupContentContainer,
+        .mcnCaptionLeftTextContentContainer,
+        .mcnCaptionRightTextContentContainer,
+        .mcnCaptionLeftImageContentContainer,
+        .mcnCaptionRightImageContentContainer,
+        .mcnImageCardLeftTextContentContainer,
+        .mcnImageCardRightTextContentContainer,
+        .mcnImageCardLeftImageContentContainer,
+        .mcnImageCardRightImageContentContainer {
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        .mcnBoxedTextContentContainer {
+            min-width: 100% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        .mcnImageGroupContent {
+            padding: 9px !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .mcnCaptionLeftContentOuter .mcnTextContent,
+        .mcnCaptionRightContentOuter .mcnTextContent {
+            padding-top: 9px !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .mcnImageCardTopImageContent,
+        .mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent,
+        .mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent {
+            padding-top: 18px !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        .mcnImageCardBottomImageContent {
+            padding-bottom: 9px !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        .mcnImageGroupBlockInner {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        .mcnImageGroupBlockOuter {
+            padding-top: 9px !important;
+            padding-bottom: 9px !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .mcnTextContent,
+        .mcnBoxedTextContentColumn {
+            padding-right: 18px !important;
+            padding-left: 18px !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .mcnImageCardLeftImageContent,
+        .mcnImageCardRightImageContent {
+            padding-right: 18px !important;
+            padding-bottom: 0 !important;
+            padding-left: 18px !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        .mcpreview-image-uploader {
+            display: none !important;
+            width: 100% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        h1 {
+            font-size: 30px !important;
+            line-height: 125% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        h2 {
+            font-size: 26px !important;
+            line-height: 125% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        h3 {
+            font-size: 20px !important;
+            line-height: 150% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        h4 {
+            font-size: 18px !important;
+            line-height: 150% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .mcnBoxedTextContentContainer .mcnTextContent,
+        .mcnBoxedTextContentContainer .mcnTextContent p {
+            font-size: 14px !important;
+            line-height: 150% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .headerContainer .mcnTextContent,
+        .headerContainer .mcnTextContent p {
+            font-size: 16px !important;
+            line-height: 150% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .bodyContainer .mcnTextContent,
+        .bodyContainer .mcnTextContent p {
+            font-size: 16px !important;
+            line-height: 150% !important;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .footerContainer .mcnTextContent,
+        .footerContainer .mcnTextContent p {
+            font-size: 14px !important;
+            line-height: 150% !important;
+        }
+
+    }
+</style>
+<body id="archivebody">
+	<body
+		style="height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+		<!---->
+		<center>
+			<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable"
+				style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;">
+				<tr>
+					<td align="center" valign="top" id="bodyCell"
+						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;">
+						<!-- BEGIN TEMPLATE // -->
+						<table border="0" cellpadding="0" cellspacing="0" width="100%"
+							style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+							<tr>
+								<td align="center" valign="top" id="templateHeader" data-template-container=""
+									style="background:#000000 none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #000000;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0px;">
+									<!--[if (gte mso 9)|(IE)]>
+                                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                                    <tr>
+                                    <td align="center" valign="top" width="600" style="width:600px;">
+                                    <![endif]-->
+									<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+										class="templateContainer"
+										style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+										<tr>
+											<td valign="top" class="headerContainer"
+												style="background:transparent none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: transparent;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%"
+													class="mcnImageBlock"
+													style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+													<tbody class="mcnImageBlockOuter">
+														<tr>
+															<td valign="top"
+																style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																class="mcnImageBlockInner">
+																<table align="left" width="100%" border="0"
+																	cellpadding="0" cellspacing="0"
+																	class="mcnImageContentContainer"
+																	style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																	<tbody>
+																		<tr>
+																			<td class="mcnImageContent" valign="top"
+																				style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+																				<img align="center" alt=""
+																					src="https://mcusercontent.com/520c98b753b1f8cd465bafd7e/images/7fc50c22-abfb-86bc-93ca-ea236b3be130.png"
+																					width="564"
+																					style="max-width: 600px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"
+																					class="mcnImage">
+
+
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+								</td>
+							</tr>
+							<tr>
+								<td align="center" valign="top" id="templateBody" data-template-container=""
+									style="background:#000000 none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #000000;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0px;">
+									<!--[if (gte mso 9)|(IE)]>
+                                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                                    <tr>
+                                    <td align="center" valign="top" width="600" style="width:600px;">
+                                    <![endif]-->
+									<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+										class="templateContainer"
+										style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+										<tr>
+											<td valign="top" class="bodyContainer"
+												style="background:transparent none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: transparent;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%"
+													class="mcnTextBlock"
+													style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+													<tbody class="mcnTextBlockOuter">
+														<tr>
+															<td valign="top" class="mcnTextBlockInner"
+																style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<tr>
+				<![endif]-->
+
+																<!--[if mso]>
+				<td valign="top" width="600" style="width:600px;">
+				<![endif]-->
+																<table align="left" border="0" cellpadding="0"
+																	cellspacing="0"
+																	style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																	width="100%" class="mcnTextContentContainer">
+																	<tbody>
+																		<tr>
+
+																			<td valign="top" class="mcnTextContent"
+																				style="padding: 0px 18px 9px;color: #000000;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+																				<h4
+																					style="display: block;margin: 0;padding: 0;color: #949494;font-family: Georgia;font-size: 20px;font-style: italic;font-weight: normal;line-height: 125%;letter-spacing: normal;text-align: center;">
+																					<strong>Representing IPL Auction
+																						once again.</strong></h4>
+
+																				<h1
+																					style="display: block;margin: 0;padding: 0;color: #000000;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: center;">
+																					<span
+																						style="font-family:comic sans ms,marker felt-thin,arial,sans-serif"><span
+																							style="color:#FFFFFF">A
+																							great opportunity to win
+																							money</span>&nbsp;</span>
+																				</h1>
+
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+																<!--[if mso]>
+				</td>
+				<![endif]-->
+
+																<!--[if mso]>
+				</tr>
+				</table>
+				<![endif]-->
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table border="0" cellpadding="0" cellspacing="0" width="100%"
+													class="mcnImageCardBlock"
+													style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+													<tbody class="mcnImageCardBlockOuter">
+														<tr>
+															<td class="mcnImageCardBlockInner" valign="top"
+																style="padding-top: 9px;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+																<table align="right" border="0" cellpadding="0"
+																	cellspacing="0" class="mcnImageCardBottomContent"
+																	width="100%"
+																	style="background-color: #404040;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																	<tbody>
+																		<tr>
+																			<td class="mcnImageCardBottomImageContent"
+																				align="left" valign="top"
+																				style="padding-top: 0px;padding-right: 0px;padding-bottom: 0;padding-left: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+
+																				<img alt=""
+																					src="https://mcusercontent.com/520c98b753b1f8cd465bafd7e/images/36c82cd0-f864-35fd-557e-aadbf93c0179.png"
+																					width="564"
+																					style="max-width: 600px;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;"
+																					class="mcnImage">
+
+
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="mcnTextContent" valign="top"
+																				style="padding: 9px 18px;color: #F2F2F2;font-family: Helvetica;font-size: 14px;font-weight: normal;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;line-height: 150%;"
+																				width="546">
+
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+
+
+
+
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table border="0" cellpadding="0" cellspacing="0" width="100%"
+													class="mcnDividerBlock"
+													style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+													<tbody class="mcnDividerBlockOuter">
+														<tr>
+															<td class="mcnDividerBlockInner"
+																style="min-width: 100%;padding: 9px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																<table class="mcnDividerContent" border="0"
+																	cellpadding="0" cellspacing="0" width="100%"
+																	style="min-width: 100%;border-top: 1px solid #E0E0E0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																				<span></span>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+																<!--            
+                <td class="mcnDividerBlockInner" style="padding: 18px;">
+                <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+-->
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table border="0" cellpadding="0" cellspacing="0" width="100%"
+													class="mcnTextBlock"
+													style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+													<tbody class="mcnTextBlockOuter">
+														<tr>
+															<td valign="top" class="mcnTextBlockInner"
+																style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<tr>
+				<![endif]-->
+
+																<!--[if mso]>
+				<td valign="top" width="600" style="width:600px;">
+				<![endif]-->
+																<table align="left" border="0" cellpadding="0"
+																	cellspacing="0"
+																	style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																	width="100%" class="mcnTextContentContainer">
+																	<tbody>
+																		<tr>
+
+																			<td valign="top" class="mcnTextContent"
+																				style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+																				<h3 class="null"
+																					style="text-align: center;display: block;margin: 0;padding: 0;color: #444444;font-family: Helvetica;font-size: 22px;font-style: normal;font-weight: bold;line-height: 150%;letter-spacing: normal;">
+																					<span
+																						style="font-family:helvetica neue,helvetica,arial,verdana,sans-serif"><span
+																							style="color:#FFF0F5">IPL
+																							AUCTION RULES AND
+																							GUIDELINES</span></span>
+																				</h3>
+
+																				<ol>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Your money will return back to
+																						the registered mobile number
+																					</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Selected teams won’t get refunds
+																					</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Must be present on 25 may</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Timings : From 19 May will be
+																						start of bidding till 23 May
+																						night</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						24 May : opening day<br>
+																						25 May : Result(event)</li>
+																					<li value="5"
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Player size: 150(total)- one
+																						team will carry 12 players</li>
+																					<li value="6"
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Winner will be decided on the
+																						basis of highest point the team
+																						collect. OR when there is tie
+																						between 2 teams then the winner
+																						will be decided on the basis of
+																						highest money belonging to there
+																						wallet (balanced money)</li>
+																					<li value="7"
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Player points and player price
+																						will be displayed on bidding day
+																					</li>
+																					<li value="8"
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Players list will be displayed
+																						without there price and points.
+																					</li>
+																					<li value="9"
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Leader board displaying done
+																						after sold of 15
+																						players.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																					</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Fair Game</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						75 players will be displayed in
+																						1 slot and other 75 after short
+																						break means in 2 slot.</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Highest point : 20(player) but
+																						pricing will varying for 20
+																						point</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Drinks break and time limits(not
+																						confirmed)</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Min batsmen: 2<br>
+																						Min ballers: 2<br>
+																						Min wikect keeper: 1<br>
+																						Min all rounder: 2</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Main or popular players will be
+																						equally distributed in both
+																						slot.</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						You can buy multiple teams but
+																						you should have different 5
+																						members in each team.</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						For the bidding, the remaining
+																						lowest bidders among top 10
+																						&nbsp;would be allocated to
+																						remaining teams.</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						In team 5 max members and least
+																						1 member</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						The highest bidding on team by
+																						the player will get chance to
+																						choose his team name.</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Wallet system</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Total teams allotted will be 10
+																						remaining once money will be
+																						refunded.</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						Teams with less members can
+																						merge with another team for same
+																						name</li>
+																					<li
+																						style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						social media marketing : 12
+																						May<br>
+																						Offline marketing :22,23,24<br>
+																						Mail : 14May<br>
+																						Registration: 19May onwards
+																						open<br>
+																						&nbsp;</li>
+																				</ol>
+
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+																<!--[if mso]>
+				</td>
+				<![endif]-->
+
+																<!--[if mso]>
+				</tr>
+				</table>
+				<![endif]-->
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table border="0" cellpadding="0" cellspacing="0" width="100%"
+													class="mcnButtonBlock"
+													style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+													<tbody class="mcnButtonBlockOuter">
+														<tr>
+															<td style="padding-top: 0;padding-right: 18px;padding-bottom: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																valign="top" align="center" class="mcnButtonBlockInner">
+																<table border="0" cellpadding="0" cellspacing="0"
+																	class="mcnButtonContentContainer"
+																	style="border-collapse: separate !important;border-radius: 3px;background-color: #009FC7;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																	<tbody>
+																		<tr>
+																			<td align="center" valign="middle"
+																				class="mcnButtonContent"
+																				style="font-family: Helvetica;font-size: 18px;padding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																				<a class="mcnButton "
+																					title="Find Out More" href=""
+																					target="_blank"
+																					style="font-weight: bold;letter-spacing: -0.5px;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;">Find
+																					Out More</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+								</td>
+							</tr>
+							<tr>
+								<td align="center" valign="top" id="templateFooter" data-template-container=""
+									style="background:#333333 none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #333333;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0px;">
+									<!--[if (gte mso 9)|(IE)]>
+                                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                                    <tr>
+                                    <td align="center" valign="top" width="600" style="width:600px;">
+                                    <![endif]-->
+									<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+										class="templateContainer"
+										style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+										<tr>
+											<td valign="top" class="footerContainer"
+												style="background:transparent none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: transparent;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%"
+													class="mcnFollowBlock"
+													style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+													<tbody class="mcnFollowBlockOuter">
+														<tr>
+															<td align="center" valign="top"
+																style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																class="mcnFollowBlockInner">
+																<table border="0" cellpadding="0" cellspacing="0"
+																	width="100%" class="mcnFollowContentContainer"
+																	style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																	<tbody>
+																		<tr>
+																			<td align="center"
+																				style="padding-left: 9px;padding-right: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																				<table border="0" cellpadding="0"
+																					cellspacing="0" width="100%"
+																					style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																					class="mcnFollowContent">
+																					<tbody>
+																						<tr>
+																							<td align="center"
+																								valign="top"
+																								style="padding-top: 9px;padding-right: 9px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																								<table align="center"
+																									border="0"
+																									cellpadding="0"
+																									cellspacing="0"
+																									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																									<tbody>
+																										<tr>
+																											<td align="center"
+																												valign="top"
+																												style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																												<!--[if mso]>
+                                    <table align="center" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                    <![endif]-->
+
+																												<!--[if mso]>
+                                        <td align="center" valign="top">
+                                        <![endif]-->
+
+
+																												<table
+																													align="left"
+																													border="0"
+																													cellpadding="0"
+																													cellspacing="0"
+																													style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																													<tbody>
+																														<tr>
+																															<td valign="top"
+																																style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																																class="mcnFollowContentItemContainer">
+																																<table
+																																	border="0"
+																																	cellpadding="0"
+																																	cellspacing="0"
+																																	width="100%"
+																																	class="mcnFollowContentItem"
+																																	style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																	<tbody>
+																																		<tr>
+																																			<td align="left"
+																																				valign="middle"
+																																				style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																				<table
+																																					align="left"
+																																					border="0"
+																																					cellpadding="0"
+																																					cellspacing="0"
+																																					width=""
+																																					style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																					<tbody>
+																																						<tr>
+
+																																							<td align="center"
+																																								valign="middle"
+																																								width="24"
+																																								class="mcnFollowIconContent"
+																																								style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																								<a href="http://www.facebook.com"
+																																									target="_blank"
+																																									style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img
+																																										src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-light-facebook-48.png"
+																																										alt="Facebook"
+																																										style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"
+																																										height="24"
+																																										width="24"
+																																										class=""></a>
+																																							</td>
+
+
+																																						</tr>
+																																					</tbody>
+																																				</table>
+																																			</td>
+																																		</tr>
+																																	</tbody>
+																																</table>
+																															</td>
+																														</tr>
+																													</tbody>
+																												</table>
+
+																												<!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+																												<!--[if mso]>
+                                        <td align="center" valign="top">
+                                        <![endif]-->
+
+
+																												<table
+																													align="left"
+																													border="0"
+																													cellpadding="0"
+																													cellspacing="0"
+																													style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																													<tbody>
+																														<tr>
+																															<td valign="top"
+																																style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																																class="mcnFollowContentItemContainer">
+																																<table
+																																	border="0"
+																																	cellpadding="0"
+																																	cellspacing="0"
+																																	width="100%"
+																																	class="mcnFollowContentItem"
+																																	style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																	<tbody>
+																																		<tr>
+																																			<td align="left"
+																																				valign="middle"
+																																				style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																				<table
+																																					align="left"
+																																					border="0"
+																																					cellpadding="0"
+																																					cellspacing="0"
+																																					width=""
+																																					style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																					<tbody>
+																																						<tr>
+
+																																							<td align="center"
+																																								valign="middle"
+																																								width="24"
+																																								class="mcnFollowIconContent"
+																																								style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																								<a href="http://www.twitter.com/"
+																																									target="_blank"
+																																									style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img
+																																										src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-light-twitter-48.png"
+																																										alt="Twitter"
+																																										style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"
+																																										height="24"
+																																										width="24"
+																																										class=""></a>
+																																							</td>
+
+
+																																						</tr>
+																																					</tbody>
+																																				</table>
+																																			</td>
+																																		</tr>
+																																	</tbody>
+																																</table>
+																															</td>
+																														</tr>
+																													</tbody>
+																												</table>
+
+																												<!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+																												<!--[if mso]>
+                                        <td align="center" valign="top">
+                                        <![endif]-->
+
+
+																												<table
+																													align="left"
+																													border="0"
+																													cellpadding="0"
+																													cellspacing="0"
+																													style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																													<tbody>
+																														<tr>
+																															<td valign="top"
+																																style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																																class="mcnFollowContentItemContainer">
+																																<table
+																																	border="0"
+																																	cellpadding="0"
+																																	cellspacing="0"
+																																	width="100%"
+																																	class="mcnFollowContentItem"
+																																	style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																	<tbody>
+																																		<tr>
+																																			<td align="left"
+																																				valign="middle"
+																																				style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																				<table
+																																					align="left"
+																																					border="0"
+																																					cellpadding="0"
+																																					cellspacing="0"
+																																					width=""
+																																					style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																					<tbody>
+																																						<tr>
+
+																																							<td align="center"
+																																								valign="middle"
+																																								width="24"
+																																								class="mcnFollowIconContent"
+																																								style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																								<a href="http://www.instagram.com/"
+																																									target="_blank"
+																																									style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img
+																																										src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-light-instagram-48.png"
+																																										alt="Link"
+																																										style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"
+																																										height="24"
+																																										width="24"
+																																										class=""></a>
+																																							</td>
+
+
+																																						</tr>
+																																					</tbody>
+																																				</table>
+																																			</td>
+																																		</tr>
+																																	</tbody>
+																																</table>
+																															</td>
+																														</tr>
+																													</tbody>
+																												</table>
+
+																												<!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+																												<!--[if mso]>
+                                        <td align="center" valign="top">
+                                        <![endif]-->
+
+
+																												<table
+																													align="left"
+																													border="0"
+																													cellpadding="0"
+																													cellspacing="0"
+																													style="display: inline;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																													<tbody>
+																														<tr>
+																															<td valign="top"
+																																style="padding-right: 0;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																																class="mcnFollowContentItemContainer">
+																																<table
+																																	border="0"
+																																	cellpadding="0"
+																																	cellspacing="0"
+																																	width="100%"
+																																	class="mcnFollowContentItem"
+																																	style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																	<tbody>
+																																		<tr>
+																																			<td align="left"
+																																				valign="middle"
+																																				style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																				<table
+																																					align="left"
+																																					border="0"
+																																					cellpadding="0"
+																																					cellspacing="0"
+																																					width=""
+																																					style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																					<tbody>
+																																						<tr>
+
+																																							<td align="center"
+																																								valign="middle"
+																																								width="24"
+																																								class="mcnFollowIconContent"
+																																								style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																								<a href="http://mailchimp.com"
+																																									target="_blank"
+																																									style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img
+																																										src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-light-link-48.png"
+																																										alt="Website"
+																																										style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"
+																																										height="24"
+																																										width="24"
+																																										class=""></a>
+																																							</td>
+
+
+																																						</tr>
+																																					</tbody>
+																																				</table>
+																																			</td>
+																																		</tr>
+																																	</tbody>
+																																</table>
+																															</td>
+																														</tr>
+																													</tbody>
+																												</table>
+
+																												<!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+																												<!--[if mso]>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table>
+																							</td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table border="0" cellpadding="0" cellspacing="0" width="100%"
+													class="mcnDividerBlock"
+													style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+													<tbody class="mcnDividerBlockOuter">
+														<tr>
+															<td class="mcnDividerBlockInner"
+																style="min-width: 100%;padding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																<table class="mcnDividerContent" border="0"
+																	cellpadding="0" cellspacing="0" width="100%"
+																	style="min-width: 100%;border-top: 2px solid #505050;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																				<span></span>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+																<!--            
+                <td class="mcnDividerBlockInner" style="padding: 18px;">
+                <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+-->
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table border="0" cellpadding="0" cellspacing="0" width="100%"
+													class="mcnTextBlock"
+													style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+													<tbody class="mcnTextBlockOuter">
+														<tr>
+															<td valign="top" class="mcnTextBlockInner"
+																style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																<!--[if mso]>
+				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<tr>
+				<![endif]-->
+
+																<!--[if mso]>
+				<td valign="top" width="600" style="width:600px;">
+				<![endif]-->
+																<table align="left" border="0" cellpadding="0"
+																	cellspacing="0"
+																	style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+																	width="100%" class="mcnTextContentContainer">
+																	<tbody>
+																		<tr>
+
+																			<td valign="top" class="mcnTextContent"
+																				style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #FFFFFF;font-family: Helvetica;font-size: 12px;line-height: 150%;text-align: center;">
+
+																				<em>Copyright © ecell mitaoe</em><br>
+																				&nbsp;
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+																<!--[if mso]>
+				</td>
+				<![endif]-->
+
+																<!--[if mso]>
+				</tr>
+				</table>
+				<![endif]-->
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+								</td>
+							</tr>
+						</table>
+						<!-- // END TEMPLATE -->
+					</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			document.getElementById("copyToClipboard").addEventListener("click", function () {
+				var input = document.getElementById("clipboardSource");
+				input.select();
+				var successful = document.execCommand("copy");
+				if (successful) {
+					alert('Copied "' + input.value + '" to your clipboard.');
+				} else {
+					throw new Error("Failed to copy text (verify caller was in the context of an event handler)");
+				}
+			});
+
+			$('li.more > a').click(function () {
+				var toToggle = $($(this).attr('data-to-toggle'));
+				if (toToggle.is(':visible')) {
+					toToggle.slideUp('fast');
+					$(this).removeClass('is-active');
+					if ($('#awesomebar').find('.is-active').length < 1) {
+						$('#awesomebar').removeClass('sub-active');
+					}
+				} else {
+					toToggle.slideDown('fast');
+					$(this).addClass('is-active');
+					$('#awesomebar').addClass('sub-active');
+				}
+				return false;
+			});
+
+		});
+	</script>
+</body>
+</html>
