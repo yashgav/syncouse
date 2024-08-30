@@ -21,7 +21,7 @@
     String flat = (String) request.getAttribute("flat");
     String role = (String) request.getAttribute("role");
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
     PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERDETAILS where scode=? and FLATNO=? and ROLE=? and USERNAME=?;");
     stmt.setString(1, sc);

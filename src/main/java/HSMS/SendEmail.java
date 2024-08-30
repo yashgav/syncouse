@@ -36,7 +36,7 @@ public class SendEmail {
         String subject = "SMS Register Successfull";
         String body = "";
          try {
-        body = new String(Files.readAllBytes(Paths.get("C:/Users/Yash/Documents/NetBeansProjects/HMS/src/main/webapp/WEB-INF/jsp/email.html")));
+        body = new String(Files.readAllBytes(Paths.get("src/main/webapp/WEB-INF/jsp/email.html")));
     } catch (IOException e) {
         e.printStackTrace();
     }

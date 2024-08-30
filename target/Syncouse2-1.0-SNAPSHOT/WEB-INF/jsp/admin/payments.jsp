@@ -4,7 +4,7 @@
     String scode = (String) request.getAttribute("scode");
 
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
     PreparedStatement stmt = con.prepareStatement("SELECT * FROM maintainance where scode=?;");
     stmt.setString(1, scode);

@@ -4,10 +4,7 @@
  */
 package HSMS;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,8 +39,18 @@ public class HomeController {
             Map<String, Object> ob1
     ) {
 
-        ob1.put("ud1", ud);
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
+        }catch (ClassNotFoundException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
+        }
+        ob1.put("ud1", ud);
         System.out.println("in register");
         return "register";
     }
@@ -58,7 +65,7 @@ public class HomeController {
         System.out.println(udm.age + udm.city + udm.username + udm.password);
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
             System.out.println("adding in database");
 
@@ -219,7 +226,7 @@ public class HomeController {
         try {
             System.out.println("reached to register proccessing");
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
             System.out.println(x + y + z);
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERDETAILS WHERE ROLE='Admin' AND USERNAME=? AND PASSWORD=? and scode=?");
 
@@ -271,7 +278,7 @@ public class HomeController {
         try {
             System.out.println("reached to register proccessing");
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERDETAILS WHERE ROLE='Member' AND USERNAME=? AND PASSWORD=? and scode=?");
 
@@ -363,7 +370,7 @@ public class HomeController {
         m.addAttribute("user", ld.username);
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
             System.out.println("maintainace scode" + ld.scode);
             PreparedStatement stmt1 = con.prepareStatement("SELECT * FROM maintainance where scode=?");
             stmt1.setString(1, ld.scode);
@@ -422,7 +429,7 @@ public class HomeController {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM maintainance where scode=?;");
             stmt.setString(1, ld.scode);
@@ -522,7 +529,7 @@ public class HomeController {
         m.addAttribute("scode", ld.scode);
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
             System.out.println("maintainace scode" + ld.scode);
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM announcement where scode=?");
@@ -573,7 +580,7 @@ m.addAttribute("scode", ld.scode);
         m.addAttribute("user", ld.username);
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
             System.out.println("maintainace scode" + ld.scode);
             PreparedStatement stmt1 = con.prepareStatement("INSERT INTO COMMUNITY VALUES(?,?,?)");
             stmt1.setString(1, pur);
@@ -664,7 +671,7 @@ m.addAttribute("scode", ld.scode);
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
             System.out.println("maintainace scode" + ld.scode);
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM COMPLAINTS ORDER BY ID DESC LIMIT 1");
@@ -700,7 +707,7 @@ m.addAttribute("scode", ld.scode);
         m.addAttribute("user", ld.username);
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
             System.out.println("maintainace scode" + ld.scode + l);
             PreparedStatement stmt1 = con.prepareStatement("DELETE FROM COMPLAINTS WHERE ID=?");
             stmt1.setInt(1, l);
@@ -718,7 +725,7 @@ m.addAttribute("scode", ld.scode);
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HMS?characterEncoding=utf8", "root", "root");
+            Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
             PreparedStatement stmt1 = con.prepareStatement("DELETE FROM userdetails WHERE scode=? and username=?");
             stmt1.setString(1, sc);
             stmt1.setString(2, user);
