@@ -110,15 +110,15 @@ public class HomeController {
             } else {
                
                 System.out.println("in else");
-                PreparedStatement stmt3 = con.prepareStatement("SELECT * FROM USERDETAILS WHERE ROLE='Admin' and scode=?");
+                PreparedStatement stmt3 = con.prepareStatement("SELECT * FROM USERDETAILS WHERE ROLE='Admin' AND SCODE=?");
                 stmt3.setString(1, udm.mscode);
                 ResultSet rs3 = stmt3.executeQuery();
                 int f = 0;
                 System.out.println(udm.mscode);
                 String scode = null, sn = null;
                 while (rs3.next()) {
-                    scode = rs3.getString("scode");
-                    sn = rs3.getString("sname");
+                    scode = rs3.getString("SCODE");
+                    sn = rs3.getString("SNAME");
                 }
 
                 System.out.println(scode);
@@ -146,7 +146,7 @@ public class HomeController {
                     stmt.setString(19, udm.email);
                     stmt.executeUpdate();
                     se.mailing("syncouse.society@gmail.com", passs, "syncouse.society@gmail.com", udm.email, udm.fname,udm.username,  udm.sname, udm.mscode, 0);
-                   PreparedStatement stmt20 = con.prepareStatement("CREATE TABLE "+udm.username+"_"+udm.mscode+"_BILL(id int,ROLETYPE VARCHAR(20),SCODE VARCHAR(20),FLATNO VARCHAR(20),USERNAME VARCHAR(20),BILLTYPE VARCHAR(30),AMOUNT INT,STATUS VARCHAR(10),ISSUEDATE VARCHAR(20),DUEDATE VARCHAR(20));");
+                   PreparedStatement stmt20 = con.prepareStatement("CREATE TABLE "+udm.username+"_"+udm.mscode+"_BILL(ID INT,ROLETYPE VARCHAR(20),SCODE VARCHAR(20),FLATNO VARCHAR(20),USERNAME VARCHAR(20),BILLTYPE VARCHAR(30),AMOUNT INT,STATUS VARCHAR(10),ISSUEDATE VARCHAR(20),DUEDATE VARCHAR(20));");
                     stmt20.executeUpdate();
                     return "home";
                 } else {
@@ -228,7 +228,7 @@ public class HomeController {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
             System.out.println(x + y + z);
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERDETAILS WHERE ROLE='Admin' AND USERNAME=? AND PASSWORD=? and scode=?");
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERDETAILS WHERE ROLE='Admin' AND USERNAME=? AND PASSWORD=? AND SCODE=?");
 
             stmt.setString(1, x);
             stmt.setString(2, y);
@@ -280,7 +280,7 @@ public class HomeController {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERDETAILS WHERE ROLE='Member' AND USERNAME=? AND PASSWORD=? and scode=?");
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERDETAILS WHERE ROLE='Member' AND USERNAME=? AND PASSWORD=? AND SCODE=?");
 
             stmt.setString(1, x);
             stmt.setString(2, y);
@@ -291,7 +291,7 @@ public class HomeController {
             while (rs.next()) {
                 user = rs.getString("USERNAME");
                 pass = rs.getString("PASSWORD");
-                sc = rs.getString("scode");
+                sc = rs.getString("SCODE");
                 fn = rs.getString("FLATNO");
                 n = rs.getInt("ID");
             }
@@ -372,7 +372,7 @@ public class HomeController {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
             System.out.println("maintainace scode" + ld.scode);
-            PreparedStatement stmt1 = con.prepareStatement("SELECT * FROM maintainance where scode=?");
+            PreparedStatement stmt1 = con.prepareStatement("SELECT * FROM MAINTAINANCE WHERE SCODE=?");
             stmt1.setString(1, ld.scode);
             ResultSet rs = stmt1.executeQuery();
             String scode = null;
@@ -387,7 +387,7 @@ public class HomeController {
             }
             if (scode == null) {
 
-                PreparedStatement stmt3 = con.prepareStatement("INSERT INTO maintainance VALUES(?,?,?,?,?,?,?,?,?)");
+                PreparedStatement stmt3 = con.prepareStatement("INSERT INTO MAINTAINANCE VALUES(?,?,?,?,?,?,?,?,?)");
                 stmt3.setInt(1, mba.general);
                 stmt3.setInt(2, mba.water);
                 stmt3.setInt(3, mba.muncipal);
@@ -401,7 +401,7 @@ public class HomeController {
                 stmt3.executeUpdate();
             } else {
 
-                PreparedStatement stmt2 = con.prepareStatement("UPDATE MAINTAINANCE SET GENERAL=?,WATER=?,MUNCIPAL=?,CLEAN=?,ELECTRICITY=?,PARKING=?,LIFT=?,TOTAL=? where SCODE=?;");
+                PreparedStatement stmt2 = con.prepareStatement("UPDATE MAINTAINANCE SET GENERAL=?,WATER=?,MUNCIPAL=?,CLEAN=?,ELECTRICITY=?,PARKING=?,LIFT=?,TOTAL=? WHERE SCODE=?;");
                 stmt2.setInt(1, mba.general);
                 stmt2.setInt(2, mba.water);
                 stmt2.setInt(3, mba.muncipal);
@@ -431,7 +431,7 @@ public class HomeController {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM maintainance where scode=?;");
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM MAINTAINANCE WHERE SCODE=?;");
             stmt.setString(1, ld.scode);
             int t = 3800;
             ResultSet rs = stmt.executeQuery();
@@ -440,7 +440,7 @@ public class HomeController {
             }
             System.out.println("totals: " + t);
 //PreparedStatement stmt10 = con.prepareStatement("CREATE TABLE "+udm.username+"_"+udm.ascode+"_BILL(ROLETYPE VARCHR(20),SCODE VARCHAR(20),FLATNO VACHAR(20),USERNAME VARCHAR(20),BILLTYPE VARCHAR(30),AMOUNT INT,STATUS VARCHAR(10),DUEDATE VARCHAR(20));");
-            PreparedStatement stmt5 = con.prepareStatement("SELECT * FROM USERDETAILS where scode=? and role='Member';");
+            PreparedStatement stmt5 = con.prepareStatement("SELECT * FROM USERDETAILS WHERE SCODE=? AND ROLE='Member';");
             stmt5.setString(1, ld.scode);
             String used[]=new String[100];
             String ffl[]=new String[100];
@@ -448,16 +448,16 @@ public class HomeController {
             ResultSet rs5 = stmt5.executeQuery();
             while (rs5.next()) {
                 used[i]=rs5.getString("USERNAME");
-                ffl[i]=rs5.getString("Flatno");
+                ffl[i]=rs5.getString("FLATNO");
                 System.out.println(used[i]);
                 i++;
             }
             
-            PreparedStatement stmt11 = con.prepareStatement("select CURRENT_DATE() as date;");
+            PreparedStatement stmt11 = con.prepareStatement("SELECT CURRENT_DATE() AS DATE;");
             String idt=null;
             ResultSet rs11 = stmt11.executeQuery();
             while (rs11.next()) {
-                idt=rs11.getString("date");
+                idt=rs11.getString("DATE");
             }
             
             
@@ -466,11 +466,11 @@ public class HomeController {
             
             for(int j=0;j<i;j++){
                 
-                PreparedStatement stmt18 = con.prepareStatement("select * from "+used[j]+"_"+ld.scode+"_BILL  ORDER BY ID DESC LIMIT 1 ");
+                PreparedStatement stmt18 = con.prepareStatement("SELECT * FROM "+used[j]+"_"+ld.scode+"_BILL  ORDER BY ID DESC LIMIT 1 ");
             int er=0;
             ResultSet rs18 = stmt18.executeQuery();
             while (rs18.next()) {
-                er=rs18.getInt("id");
+                er=rs18.getInt("ID");
             }
             
             int o=er+1;
@@ -532,18 +532,18 @@ public class HomeController {
             Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
             System.out.println("maintainace scode" + ld.scode);
 
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM announcement where scode=?");
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM ANNOUNCEMENT WHERE SCODE=?");
             stmt.setString(1, ld.scode);
             int x = 0;
             String sc=null;
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                sc=rs.getString("scode");
+                sc=rs.getString("SCODE");
                 x = rs.getInt("ID");
             }
             System.out.println("sc is "+sc);
             if(sc!=null){
-                PreparedStatement stmt1 = con.prepareStatement("UPDATE announcement SET USERNAME=?,SUBJECT=?,MESSAGE=? where scode=?");
+                PreparedStatement stmt1 = con.prepareStatement("UPDATE ANNOUNCEMENT SET USERNAME=?,SUBJECT=?,MESSAGE=? WHERE SCODE=?");
                 stmt1.setString(1, ld.username);
                 stmt1.setString(2, sub);
                 stmt1.setString(3, mes);
@@ -726,7 +726,7 @@ m.addAttribute("scode", ld.scode);
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
-            PreparedStatement stmt1 = con.prepareStatement("DELETE FROM userdetails WHERE scode=? and username=?");
+            PreparedStatement stmt1 = con.prepareStatement("DELETE FROM USERDETAILS WHERE SCODE=? AND USERNAME=?");
             stmt1.setString(1, sc);
             stmt1.setString(2, user);
             stmt1.executeUpdate();
