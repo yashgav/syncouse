@@ -11,7 +11,7 @@
      String scc = (String) request.getAttribute("scode");
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
-    PreparedStatement stmt = con.prepareStatement("SELECT * FROM COMPLAINTS where username=? and SCODE=?;");
+    PreparedStatement stmt = con.prepareStatement("SELECT * FROM COMPLAINTS WHERE USERNAME=? AND SCODE=?;");
         stmt.setString(1, uss);
         stmt.setString(2, scc);
         String sub[] = new String[100];
@@ -24,7 +24,7 @@
 
             sub[i] = rs.getString("SUBJECT");
             mess[i] = rs.getString("MESSAGE");
-            idd[i] = rs.getInt("id");
+            idd[i] = rs.getInt("ID");
             
             i++;
         }
