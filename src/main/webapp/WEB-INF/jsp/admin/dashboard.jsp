@@ -12,7 +12,7 @@
 
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
-    PreparedStatement stmt1 = con.prepareStatement("SELECT * FROM USERDETAILS WHERE SCODE=? AND USERNAME=?");
+    PreparedStatement stmt1 = con.prepareStatement("SELECT * FROM Userdetails where scode=? and username=?");
     stmt1.setString(1, scode);
     stmt1.setString(2, user);
     ResultSet rs = stmt1.executeQuery();
@@ -23,7 +23,7 @@
         fl = rs.getString("FLATNO");
     }
 
-    PreparedStatement stmt2 = con.prepareStatement("SELECT * FROM ANNOUNCEMENT WHERE SCODE=? ");
+    PreparedStatement stmt2 = con.prepareStatement("SELECT * FROM announcement where scode=? ");
     stmt2.setString(1, scode);
 
     ResultSet rs2 = stmt2.executeQuery();
@@ -36,7 +36,7 @@
     System.out.println("mess: " + mess);
     System.out.println("subs: " + subs);
     
-    PreparedStatement stmt3 = con.prepareStatement("SELECT COUNT(*) AS TA FROM userdetails WHERE SCODE=? AND ROLE=?");
+    PreparedStatement stmt3 = con.prepareStatement("SELECT count(*) as ta FROM userdetails where scode=? and role=?");
     stmt3.setString(1, scode);
     stmt3.setString(2, "Admin");
 
@@ -44,17 +44,17 @@
 
     int ta = 0; int tm = 0;
     while (rs3.next()) {
-        ta = rs3.getInt("TA");
+        ta = rs3.getInt("ta");
     }
     
-    PreparedStatement stmt4 = con.prepareStatement("SELECT COUNT(*) AS TM FROM USERDETAILS WHERE SCODE=? AND ROLE=?");
+    PreparedStatement stmt4 = con.prepareStatement("SELECT count(*) as tm FROM userdetails where scode=? and role=?");
     stmt4.setString(1, scode);
     stmt4.setString(2, "Member");
 
     ResultSet rs4 = stmt4.executeQuery();
 
     while (rs4.next()) {
-        tm = rs4.getInt("TM");
+        tm = rs4.getInt("tm");
     }
     
     PreparedStatement stmt5 = con.prepareStatement("SELECT * FROM USERDETAILS WHERE SCODE=? AND ROLE=? ORDER BY ID DESC LIMIT 5;");
@@ -67,9 +67,9 @@
     String gen[]=new String[100];
     int o=0;
     while (rs5.next()) {
-        usernames[o] = rs5.getString("USERNAME");
-        flatnos[o] = rs5.getString("FLATNO");
-        gen[o] = rs5.getString("GENDER");
+        usernames[o] = rs5.getString("USername");
+        flatnos[o] = rs5.getString("flatno");
+        gen[o] = rs5.getString("gender");
         o++;
     }
     

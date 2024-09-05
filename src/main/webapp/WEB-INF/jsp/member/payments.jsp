@@ -14,7 +14,7 @@
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
-    PreparedStatement stmt1 = con.prepareStatement("SELECT * FROM " + user + "_" + scode + "_BILL WHERE STATUS ='UNPAID'; ");
+    PreparedStatement stmt1 = con.prepareStatement("SELECT * FROM " + user + "_" + scode + "_BILL where status='UNPAID'; ");
 
     int amt[] = new int[100], bid[] = new int[100];
     int ab = 0;

@@ -11,9 +11,9 @@
     String scc = (String) request.getAttribute("scode");
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
-    PreparedStatement stmt = con.prepareStatement("SELECT * FROM COMPLAINTS WHERE SCODE=?;");
+    PreparedStatement stmt = con.prepareStatement("SELECT * FROM COMPLAINTS where SCODE=?;");
     stmt.setString(1, scc);
-    PreparedStatement stmt2 = con.prepareStatement("SELECT * FROM USERDETAILS WHERE SCODE=?;");
+    PreparedStatement stmt2 = con.prepareStatement("SELECT * FROM userdetails where SCODE=?;");
     stmt2.setString(1, scc);
     String sub[] = new String[100];
     String mess[] = new String[100];

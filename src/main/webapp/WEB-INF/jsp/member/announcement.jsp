@@ -12,7 +12,7 @@
 
     Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
-            PreparedStatement stmt1 = con.prepareStatement("SELECT * FROM ANNOUNCEMENT WHERE SCODE=?");
+            PreparedStatement stmt1 = con.prepareStatement("select * from ANNOUNCEMENT WHERE SCODE=?");
             stmt1.setString(1, scode);
             
             ResultSet rs = stmt1.executeQuery();
