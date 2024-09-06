@@ -6,7 +6,7 @@
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
-    PreparedStatement stmt = con.prepareStatement("SELECT * FROM maintainance where scode=?;");
+    PreparedStatement stmt = con.prepareStatement("SELECT * FROM MAINTAINANCE WHERE SCODE=?;");
     stmt.setString(1, scode);
 
     int g = 1200;

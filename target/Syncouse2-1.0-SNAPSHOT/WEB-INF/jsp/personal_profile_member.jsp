@@ -9,7 +9,7 @@
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
 
-        PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERDETAILS where scode=? and FLATNO=? and ROLE=? and USERNAME=?;");
+        PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERDETAILS WHERE SCODE=? AND FLATNO=? AND ROLE=? AND USERNAME=?;");
         stmt.setString(1, sc);
         stmt.setString(2, flat);
         stmt.setString(3, role);
@@ -34,17 +34,17 @@
 
             sname= rs.getString("SNAME");
             gender= rs.getString("GENDER");
-            martial= rs.getString("martial");
-            fname= rs.getString("fname");
-            mname= rs.getString("mname");
-            lname= rs.getString("lname");
-            dob= rs.getString("dob");
-            age= rs.getInt("age");
-            city= rs.getString("city");
-            district= rs.getString("district");
-            state= rs.getString("state");
-            pincode= rs.getString("pincode");
-            email= rs.getString("email");
+            martial= rs.getString("MARTIAL");
+            fname= rs.getString("FNAME");
+            mname= rs.getString("MNAME");
+            lname= rs.getString("LNAME");
+            dob= rs.getString("DOB");
+            age= rs.getInt("AGE");
+            city= rs.getString("CITY");
+            district= rs.getString("DISTRICT");
+            state= rs.getString("STATE");
+            pincode= rs.getString("PINCODE");
+            email= rs.getString("EMAIL");
 
         }
 
