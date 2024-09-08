@@ -12,7 +12,7 @@
     String fn = (String) request.getAttribute("flat");
     System.out.println("us sc " + user + scode);
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db-service:3306/HMS?characterEncoding=utf8", "root", "root");
 
     PreparedStatement stmt1 = con.prepareStatement("SELECT * FROM " + user + "_" + scode + "_BILL WHERE STATUS='UNPAID'; ");
 

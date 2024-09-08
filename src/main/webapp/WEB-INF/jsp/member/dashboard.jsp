@@ -11,7 +11,7 @@
     String scode = (String) request.getAttribute("scode");
 
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/HMS?characterEncoding=utf8", "root", "root");
+    Connection con = DriverManager.getConnection("jdbc:mysql://mysql-db-service:3306/HMS?characterEncoding=utf8", "root", "root");
     PreparedStatement stmt1 = con.prepareStatement("SELECT * FROM USERDETAILS WHERE SCODE=? AND USERNAME=?");
     stmt1.setString(1, scode);
     stmt1.setString(2, user);
